@@ -1,0 +1,9 @@
+EFT v2.0 Investigation Summary
+--------------------------------
+
+Case ID: 001
+Investigator: Srishti
+
+Emulator Detected: True
+
+Timeline Events: 142392

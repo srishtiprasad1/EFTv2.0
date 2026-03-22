@@ -1,0 +1,20 @@
+{
+    "emulator_detected": true,
+    "emulators": [
+        {
+            "name": "AndroidStudio",
+            "evidence": "/program files/windowsapps/microsoft.webmediaextensions_1.0.20875.0_x64__8wekyb3d8bbwe/avdevice-58_ms.dll"
+        },
+        {
+            "name": "AndroidStudio",
+            "evidence": "/programdata/microsoft/windows defender/definition updates/default/mpavdlta.vdm"
+        },
+        {
+            "name": "AndroidStudio",
+            "evidence": "/windows/winsxs/amd64_windows-defender-am-sigs_31bf3856ad364e35_10.0.19041.1_none_7275cb8fbafec5e1/mpavdlta.vdm"
+        }
+    ],
+    "emulator_disks": [
+        "/windows/winsxs/amd64_microsoft-windows-lxss-vm-mode_31bf3856ad364e35_10.0.19041.1_none_84865c9f15ba86d1/initrd.img"
+    ]
+}

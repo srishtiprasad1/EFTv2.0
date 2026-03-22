@@ -1,0 +1,41 @@
+{
+    "case_info": {
+        "case_id": "001",
+        "investigator": "Srishti",
+        "created_at": "2026-03-20 12:34:35"
+    },
+    "evidence": {
+        "disk_image": {
+            "path": "D:/Project testing/Raw (.dd) sample/20-06-26_Windows10vm_NoxPlayer.001",
+            "sha256": "ffc9b774370429cd3a43e4c54fe7c09e0bd19ae288a0d14c085478d8faf962dc"
+        },
+        "memory_dump": {
+            "path": null,
+            "sha256": null
+        }
+    },
+    "history": [
+        {
+            "timestamp": "2026-03-20 12:34:35",
+            "action": "case_created",
+            "details": {
+                "investigator": "Srishti"
+            }
+        },
+        {
+            "timestamp": "2026-03-20 12:46:52",
+            "action": "disk_image_loaded",
+            "details": {
+                "path": "D:/Project testing/Raw (.dd) sample/20-06-26_Windows10vm_NoxPlayer.001"
+            }
+        },
+        {
+            "timestamp": "2026-03-20 12:46:58",
+            "action": "hash_calculated",
+            "details": {
+                "target": "disk_image",
+                "sha256": "ffc9b774370429cd3a43e4c54fe7c09e0bd19ae288a0d14c085478d8faf962dc"
+            }
+        }
+    ]
+}
