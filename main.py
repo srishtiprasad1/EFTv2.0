@@ -7,6 +7,7 @@ from detection_engine.emulator_detector import EmulatorDetector
 from extraction_engine.artifact_extractor import ArtifactExtractor
 from timeline_engine.timeline_builder import TimelineBuilder
 from reporting.report_generator import ReportGenerator
+from extraction_engine.sqlite_extractor import SQLiteExtractor
 
 
 def main():
@@ -40,31 +41,42 @@ def main():
         print("\n[+] Starting Disk Analysis")
 
         analyzer = DiskAnalyzer(loader.disk_image_path)
-
         filesystems = analyzer.analyze()
 
         if not filesystems:
             print("[-] No filesystems detected")
             return
 
+        # -------- Filesystem Parsing --------
+        print("\n[+] Parsing Filesystems...")
         for i, fs in enumerate(filesystems):
             parser = FilesystemParser(fs, i, case_id)
             parser.start()
 
         print(f"[+] {len(filesystems)} filesystem(s) ready for analysis")
 
-        # Emulator detection
+        # -------- Emulator Detection --------
+        print("\n[+] Running Emulator Detection...")
         detector = EmulatorDetector(case_id)
         detector.run()
 
-        #Artifacts extractor
+        # -------- Artifact Extraction --------
+        print("\n[+] Running Artifact Extraction...")
         extractor = ArtifactExtractor(case_id)
         extractor.run()
 
-        #timeline builder
+        # -------- SQLite Extraction --------
+        print("\n[+] Running SQLite Extraction...")
+        sqlite_extractor = SQLiteExtractor(case_id)
+        sqlite_extractor.run()
+
+        # -------- Timeline --------
+        print("\n[+] Building Timeline...")
         timeline = TimelineBuilder(case_id)
         timeline.run()
 
+        # -------- Report --------
+        print("\n[+] Generating Report...")
         report = ReportGenerator(case_id)
         report.run()
 
